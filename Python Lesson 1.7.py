@@ -11,12 +11,16 @@
 #6-й день: 3,22
 #Ответ: на шестой день спортсмен достиг результата — не менее 3 км.#
 
-a = int(input("Введите результаты пробежки первого дня в км "))
-b = int(input("Введите общий желаемый результат в км "))
-result_days = 1
-result_km = a
-while result_km < b:
-        a = a + 0.1 * a
-        result_days += 1
-        result_km = result_km + a
-print(f"Вы достигнете требуемых показателей на %.d день" % result_days)
+while True:
+        result_days = 1
+        first_result_km = float (input("first result:"))
+        last_result_km = float (input("final result:"))
+        if first_result_km <= 0 or last_result_km <0:
+                print("Results are to be more than 0. Start !=0")
+        else:
+                while first_result_km < last_result_km:
+                        first_result_km += first_result_km * 0.1
+                        result_days += 1
+
+                print(f"You will reach the result in {result_days} days")
+                break
